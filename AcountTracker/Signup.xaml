@@ -1,0 +1,97 @@
+﻿<Window x:Class="AcountTracker.Signup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AcountTracker"
+        mc:Ignorable="d"
+        Title="Signup" Height="422" Width="365">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+
+        <Border CornerRadius="20" Grid.RowSpan="2">
+            <Border.Background>
+                <SolidColorBrush Color="#142a41"/>
+            </Border.Background>
+        </Border>
+
+  
+        <StackPanel Margin="0,100,0,0">
+            <StackPanel HorizontalAlignment="Center" Grid.Row="1" Orientation="Horizontal">
+                    <TextBox Text="Username"    
+                        x:Name="Usernamebox"
+                        FontWeight="Light"
+                        FontFamily="helvetica"
+                        Foreground="White"
+                        Background="Transparent"
+                        FontSize="22"
+                        Width="235"
+                        BorderBrush="Transparent" 
+                        KeyDown="Usernamebox_KeyDown"/>
+                    <Image Source=".\UsernameIcon.png" Height="25"></Image>
+            </StackPanel>
+
+            <StackPanel  Width="334">
+                   <Border Width = "275"  Height="2" Background="White"/>
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Center" Grid.Row="1" Orientation="Horizontal" Margin="0,25,0,0">
+                <TextBox  x:Name="PasswordTextBox"
+                        Text="Password"
+                        FontWeight="Light"
+                        FontFamily="helvetica"
+                        Foreground="White"
+                        Background="Transparent"
+                        FontSize="22"
+                        Width="235"
+                        BorderBrush="Transparent"
+                        KeyDown="PasswordTextBox_KeyDown"/>
+
+                <Image Source=".\PasswordIcon.png" Height="25"/>
+            </StackPanel>
+            
+            <StackPanel HorizontalAlignment="Center">
+                <Border Width = "280"  Height="2" Background="White" Margin="15,0,0,0"/>
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Center" Grid.Row="1" Orientation="Horizontal" Margin="0,25,0,0">
+                <TextBox  x:Name="ConfirmPasswordTextBox"
+                    Text=" Confirm Password"
+                    FontWeight="Light"
+                    FontFamily="helvetica"
+                    Foreground="White"
+                    Background="Transparent"
+                    FontSize="22"
+                    Width="235"
+                    BorderBrush="Transparent"
+                    KeyDown="ConfirmPasswordTextBox_KeyDown"/>
+                <Image Source=".\PasswordIcon.png" Height="25"/>
+            </StackPanel>
+            
+            <StackPanel HorizontalAlignment="Center">
+                <Border Width = "280"  Height="2" Background="White" Margin="15,0,0,0"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Margin="0,25,0,0" Width="212" Height="101">
+
+                <Button x:Name="Signupbutton"
+                    Content="Signup" 
+                    FontSize="28" 
+                    Click="Signupbutton_Click" Height="38" Width="114" Margin="0,0,0,0"
+                    KeyDown="Signupbutton_KeyDown" />
+
+                <Button x:Name="Exit"
+                    Content="Return to Login" 
+                    FontSize="18" 
+                    Click="Exit_Click" Height="38" Width="152" Margin="0,25,0,0"/>
+            </StackPanel>
+            
+        </StackPanel>
+
+    </Grid>
+
+</Window>

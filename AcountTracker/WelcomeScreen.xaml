@@ -1,0 +1,28 @@
+﻿<Window x:Class="AcountTracker.WelcomeScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AcountTracker"
+        mc:Ignorable="d"
+        Title="WelcomeScreen" Height="450" Width="800">
+    <Grid>
+
+
+        <Border>
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#00416A" Offset="0.1" />
+                    <GradientStop Color="#E4E5E6" Offset="1.2" />
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+
+        <TextBlock Text="Welcome" FontSize="72" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FF72A2DE" FontFamily="Lucida Handwriting"/>
+
+
+    </Grid>
+
+
+</Window>
+    
