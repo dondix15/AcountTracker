@@ -11,18 +11,19 @@ namespace AcountTracker
     public partial class MainWindow : Window
     {
 
-
+        Signup signupwindow = new Signup();
         static readonly string datasource = "Data Source = C:\\Users\\Dondi\\source\\repos\\AcountTracker\\AcountTracker\\bin\\Debug\\LoginDb.db";
         readonly SQLiteConnection conn = new SQLiteConnection(datasource);
-
-        public MainWindow()
+         public MainWindow()
         {
             InitializeComponent();
-
         
         }
-
-
+        public void EnsableSignup()
+        {
+            Signup.IsEnabled = true;
+        }
+     
         private void Login_Click(object sender, RoutedEventArgs e)
         {
             if (UserExsits())
@@ -48,14 +49,11 @@ namespace AcountTracker
 
             if (reader.HasRows)
             {
-
                 while (reader.Read())
                 {
                     Console.WriteLine(reader["Username"] + " " + Username.Text.ToString());
-
                     if (reader["username"].ToString() == Username.Text.ToString() && reader["password"].ToString() == Password.Text.ToString())
                     {
-
                         return true;
                     }
                 }
@@ -66,16 +64,13 @@ namespace AcountTracker
         }
 
         private void SignUp_Click(object sender, RoutedEventArgs e)
-        {
-            //creates a new sign up page and shows it
-            Signup signup = new Signup();
-
-            signup.Show();
-           
-
+        {          
+            signupwindow.Show();
+                  
+            //if signup returns true, disable the button, otherwise, don't disable the button
 
         }
-
+      
         //return key implimentation 
         private void Username_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
@@ -95,15 +90,12 @@ namespace AcountTracker
             
         }
     }
-
-       
         private void Login_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
             if (e.Key == Key.Return) 
             {
                 Login_Click( sender ,  e);
             }
-
         }
     }
 }

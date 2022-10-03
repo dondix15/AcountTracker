@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
+
 namespace AcountTracker
 {
     /// <summary>
@@ -11,9 +12,9 @@ namespace AcountTracker
     /// </summary>
     public partial class Signup : Window
     {
+
         static readonly string datasource = "Data Source = C:\\Users\\Dondi\\source\\repos\\AcountTracker\\AcountTracker\\bin\\Debug\\LoginDb.db";
         readonly SQLiteConnection conn = new SQLiteConnection(datasource);
-
         public Signup()
         {
             InitializeComponent();
@@ -38,7 +39,6 @@ namespace AcountTracker
             }
         }
 
-
         private void Signupbutton_Click(object sender, RoutedEventArgs e)
 
         {
@@ -60,9 +60,8 @@ namespace AcountTracker
 
                     int result = newAccount.ExecuteNonQuery();
                     Console.Write("rows affected" + result);
-                    MessageBox.Show("Signed up. Please return to login screen");
-                    //Prevents the user from pressing the signup button again after creating an account
-                    Signupbutton.IsEnabled = false;
+                    this.Hide();
+                   
                 }
 
             }
@@ -99,6 +98,7 @@ namespace AcountTracker
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             conn.Close();
+          
             this.Hide();
         }
         //Return key implimentation
@@ -106,7 +106,7 @@ namespace AcountTracker
         {
             if (e.Key == Key.Return)
             {
-                if (UserExsits() && ConfirmPassword())
+                if(UserExsits() && ConfirmPassword())
                 {
                     Signupbutton_Click(sender, e);
 
